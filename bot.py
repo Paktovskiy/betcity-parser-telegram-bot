@@ -30,7 +30,7 @@ def send_tg_message(channel, message, retry=3):
         else:
             with open('log.txt', 'a', encoding="UTF-8") as f:
                 date = datetime.fromtimestamp(int(time()))
-                f.write(f'{date}\n{str(type(excp))[8:-2]}\n{message}\n\n')
+                f.write(f'{date}\n{type(excp).__name__}\n{message}\n\n')
 
 
 send_tg_message(debug_channel, 'Bot has been started')
@@ -63,7 +63,7 @@ while True:
         potentially_banned.append(proxy_1)
         if potentially_banned.count(proxy_1) == 5:
             banned.append(live.pop(live.index(proxy_1)))
-        send_tg_message(debug_channel, f'url_1\n{str(type(ex))[8:-2]}\n{proxy_1}')
+        send_tg_message(debug_channel, f'url_1\n{type(ex).__name__}\n{proxy_1}')
         sleep(random.uniform(3, 6))
         continue
 
@@ -118,7 +118,7 @@ while True:
                         potentially_banned.append(proxy_2)
                         if potentially_banned.count(proxy_2) == 5:
                             banned.append(live.pop(live.index(proxy_2)))
-                        send_tg_message(debug_channel, f'url_2\n{str(type(ex))[8:-2]}\n{proxy_2}')
+                        send_tg_message(debug_channel, f'url_2\n{type(ex).__name__}\n{proxy_2}')
                         continue
 
                     try:
@@ -241,7 +241,7 @@ while True:
                         potentially_banned.append(proxy_3)
                         if potentially_banned.count(proxy_3) == 5:
                             banned.append(live.pop(live.index(proxy_3)))
-                        send_tg_message(debug_channel, f'url_3\n{str(type(ex))[8:-2]}\n{proxy_3}')
+                        send_tg_message(debug_channel, f'url_3\n{type(ex).__name__}\n{proxy_3}')
                         continue
 
                     try:
